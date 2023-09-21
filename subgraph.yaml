@@ -1,0 +1,27 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: cricketBettingContract
+    network: goerli
+    source:
+      address: "0xa4Be91f996e92990fe0d1a476aA6B94d2bc27000"
+      abi: cricketBettingContract
+      startBlock: 9734445
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - BetPlaced
+        - BettingClosed
+      abis:
+        - name: cricketBettingContract
+          file: ./abis/cricketBettingContract.json
+      eventHandlers:
+        - event: BetPlaced(indexed address,uint256,uint256,uint256)
+          handler: handleBetPlaced
+        - event: BettingClosed(uint256)
+          handler: handleBettingClosed
+      file: ./src/cricket-betting-contract.ts

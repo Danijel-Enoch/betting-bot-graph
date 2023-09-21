@@ -1,0 +1,8 @@
+{
+  "goerli": {
+    "cricketBettingContract": {
+      "address": "0xa4Be91f996e92990fe0d1a476aA6B94d2bc27000",
+      "startBlock": 9734445
+    }
+  }
+}

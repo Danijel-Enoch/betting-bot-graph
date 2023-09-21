@@ -1,0 +1,18 @@
+type BetPlaced @entity(immutable: true) {
+  id: Bytes!
+  user: Bytes! # address
+  pool: BigInt! # uint256
+  amount: BigInt! # uint256
+  eventId: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type BettingClosed @entity(immutable: true) {
+  id: Bytes!
+  winningPool: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

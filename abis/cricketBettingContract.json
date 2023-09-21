@@ -1,0 +1,245 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "pool",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "eventId",
+        "type": "uint256"
+      }
+    ],
+    "name": "BetPlaced",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "winningPool",
+        "type": "uint256"
+      }
+    ],
+    "name": "BettingClosed",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "amount", "type": "uint256" }
+    ],
+    "name": "approveTokens",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "_winningPool", "type": "uint256" },
+      { "internalType": "uint256", "name": "_eventId", "type": "uint256" }
+    ],
+    "name": "closeBetting",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "pool", "type": "uint256" },
+      { "internalType": "uint256", "name": "amount", "type": "uint256" },
+      { "internalType": "uint256", "name": "eventId", "type": "uint256" }
+    ],
+    "name": "placeBet",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "_eventId", "type": "uint256" }
+    ],
+    "name": "withdraw",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "_tokenAddress", "type": "address" }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [],
+    "name": "admin",
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "name": "BettingPools",
+    "outputs": [
+      { "internalType": "uint256", "name": "homeBalances", "type": "uint256" },
+      { "internalType": "uint256", "name": "awayBalances", "type": "uint256" },
+      { "internalType": "uint256", "name": "drawBalances", "type": "uint256" },
+      { "internalType": "uint256", "name": "homeBettors", "type": "uint256" },
+      { "internalType": "uint256", "name": "awayBettors", "type": "uint256" },
+      { "internalType": "uint256", "name": "drawBettors", "type": "uint256" },
+      { "internalType": "uint256", "name": "numberOfPools", "type": "uint256" },
+      { "internalType": "bool", "name": "isBettingOpen", "type": "bool" },
+      { "internalType": "uint256", "name": "winningPool", "type": "uint256" },
+      { "internalType": "uint256", "name": "totalBetAmount", "type": "uint256" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "_poolId", "type": "uint256" },
+      { "internalType": "uint256", "name": "amount", "type": "uint256" },
+      { "internalType": "uint256", "name": "_eventId", "type": "uint256" }
+    ],
+    "name": "calculateOddsForSpecificPools",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "_poolId", "type": "uint256" },
+      { "internalType": "uint256", "name": "_eventId", "type": "uint256" }
+    ],
+    "name": "calculateOddsForSpecificPoolsForUser",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "_poolId", "type": "uint256" },
+      { "internalType": "uint256", "name": "_eventId", "type": "uint256" }
+    ],
+    "name": "getPoolBalanace",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "_eventId", "type": "uint256" }
+    ],
+    "name": "GetPoolBettors",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "homeBalances",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "awayBalances",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "drawBalances",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "homeBettors",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "awayBettors",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "drawBettors",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "numberOfPools",
+            "type": "uint256"
+          },
+          { "internalType": "bool", "name": "isBettingOpen", "type": "bool" },
+          {
+            "internalType": "uint256",
+            "name": "winningPool",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalBetAmount",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct BettingContract.Pools",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "numberOfEvents",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "tokenAddress",
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "totalEventsAmount",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "", "type": "address" },
+      { "internalType": "uint256", "name": "", "type": "uint256" }
+    ],
+    "name": "userBets",
+    "outputs": [
+      { "internalType": "uint256", "name": "oddType", "type": "uint256" },
+      { "internalType": "uint256", "name": "amount", "type": "uint256" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
